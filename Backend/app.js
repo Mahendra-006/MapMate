@@ -47,7 +47,7 @@ app.use((error, req, res, next) => {
 
 mongoose
     .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@mernlearning.nkrsv.mongodb.net/PlaceSharingApp`)
-    .then(() => app.listen(3000))
+    .then(() => app.listen(process.env.PORT || 3000))
     .catch(err => {
         console.log(err)
     })
